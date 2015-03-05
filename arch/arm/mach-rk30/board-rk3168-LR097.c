@@ -1339,7 +1339,7 @@ static struct platform_device rk30_device_adc_battery = {
 #endif
 #ifdef CONFIG_RK30_PWM_REGULATOR
 static int pwm_voltage_map[] = {
-	800000,825000,850000, 875000,900000, 925000 ,950000, 975000,1000000, 1025000, 1050000, 1075000, 1100000, 1125000, 1150000, 1175000, 1200000, 1225000, 1250000, 1275000, 1300000, 1325000, 1350000,1375000
+	800000,825000,850000, 875000,900000, 925000 ,950000, 975000,1000000, 1025000, 1050000, 1075000, 1100000, 1125000, 1150000, 1175000, 1200000, 1225000, 1250000, 1275000, 1300000, 1325000, 1350000,1375000,1400000
 };
 static struct regulator_consumer_supply pwm_dcdc1_consumers[] = {
 	{
@@ -2475,7 +2475,8 @@ static struct cpufreq_frequency_table dvfs_arm_table[] = {
         {.frequency = 1200 * 1000,      .index = 1200 * 1000},
         {.frequency = 1416 * 1000,      .index = 1250 * 1000},
         {.frequency = 1608 * 1000,      .index = 1350 * 1000},
-        {.frequency = CPUFREQ_TABLE_END},
+        {.frequency = 1704 * 1000,      .index = 1400 * 1000},
+	{.frequency = CPUFREQ_TABLE_END},
 };
 
 static struct cpufreq_frequency_table dvfs_gpu_table[] = {	
@@ -2490,13 +2491,14 @@ static struct cpufreq_frequency_table dvfs_gpu_table[] = {
 	{.frequency = 300 * 1000,       .index = 1050 * 1000},
 	{.frequency = 400 * 1000,       .index = 1100 * 1000},
 	{.frequency = 600 * 1000,       .index = 1200 * 1000},
-        {.frequency = CPUFREQ_TABLE_END},
+        {.frequency = 760 * 1000,       .index = 1350 * 1000},
+	{.frequency = CPUFREQ_TABLE_END},
 };
 
 static struct cpufreq_frequency_table dvfs_ddr_table[] = {
 	{.frequency = 200 * 1000 + DDR_FREQ_SUSPEND,    .index = 950 * 1000},
 	//{.frequency = 300 * 1000 + DDR_FREQ_VIDEO,      .index = 1000 * 1000},
-	{.frequency = 528 * 1000 + DDR_FREQ_NORMAL,     .index = 1200 * 1000},
+	{.frequency = 740 * 1000 + DDR_FREQ_NORMAL,     .index = 1325 * 1000},
 	{.frequency = CPUFREQ_TABLE_END},
 };
 
